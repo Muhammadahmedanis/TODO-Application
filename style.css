@@ -1,0 +1,51 @@
+body{
+    background-color: rgb(183, 246, 246);
+}
+.main{
+    margin: 100px auto;
+    padding: 10px 30px;
+    height: 200px;
+    width: 50%;
+}
+.form-control{
+    width: 290px;
+    padding: 11px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+.btn-success{
+    background-color: green;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.btn-primary, .btnStyle, .btnStyle2, .editBtn{
+    background-color: red;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+.btnStyle, .btnStyle2, .editBtn{
+    padding: 8px 29px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    background-color: lightseagreen;
+}
+
+.btnStyle2{
+    background-color: rgb(221, 221, 90);
+}
+.editBtn{
+    background-color: lightgreen;
+    /* margin-left: 10px; */
+}
