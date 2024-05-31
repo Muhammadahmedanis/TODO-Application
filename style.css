@@ -4,26 +4,24 @@ h1{
     font-size: 30px;
 }
 body{
-    background-color: rgb(183, 246, 246);
+    background-color: #90cae1db;
 }
 ol{
     text-align: -webkit-center;
     padding: 0px;
 }
 .main{
-    /* margin: auto; */
-    /* height: auto; */
-    /* width: 50%; */
     text-align: center;
 }
 #inp
 {
-    padding: 22px 22px 15px;
+    padding: 20px 22px 15px;
     width: 420px;
     border-radius:28px;
     font-size: 16px;
     border: none;
     outline: none;
+    font-weight: 600;
 }
 .fa-plus{
     font-size: 25px;
@@ -35,7 +33,7 @@ ol{
     border-radius: 50%;
     margin-left: -60px;
     /* border: 2px solid black; */
-    background-color: #74fb74;
+    background-color: #7AB2B2;
     cursor: pointer;
     border: none;
     outline: none;
@@ -43,13 +41,14 @@ ol{
 
 
 .list{
-    background-color: rgba(226, 134, 101, 0.679);
+    background-color: #7AB2B2;
     list-style: none;
     width: 399px;
     margin-top: 10px;
     text-align: left;
     padding: 15px 10px;
     border-radius: 3px;
+    height: auto;
 }
 
 

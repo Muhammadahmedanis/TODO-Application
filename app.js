@@ -1,22 +1,30 @@
 var ul = document.getElementById("ul");
 var inp = document.getElementById("inp");
 
+var arr = [];
+var li;
+
 function add() {
-    var li = document.createElement("li");
+    if(inp.value.trim().length == 0)
+    {
+        alert("Enter value")
+        inp.value = "";
+    }
+    else{
+    li = document.createElement("li");
     li.setAttribute("class", "list");
-    var liText = document.createTextNode(inp.value);
+    liText = document.createTextNode(inp.value);
     li.appendChild(liText);
     ul.appendChild(li);
-
-    inp.value = "";
     
+
     var updBtn = document.createElement("i");
     updBtn.setAttribute("class", "fa-solid fa-pencil");
     li.appendChild(updBtn);
     updBtn.setAttribute("onclick", "updBtn(this)");
     
     
-    var delBtn =document.createElement("i");
+    var delBtn = document.createElement("i");
     delBtn.setAttribute("class", "fa-regular fa-trash-can");
     li.appendChild(delBtn);
     delBtn.setAttribute("onclick", "delFunc(this)");
@@ -28,8 +36,25 @@ function add() {
     li.appendChild(di);
 
 
-
+    var obj = {
+        lists: li.innerHTML, 
+    }
+    arr.push(obj);
+    localStorage.setItem("list",JSON.stringify(arr));
+    inp.value = "";
+    
+    }
 }
+// var getUser = localStorage.getItem("list");
+// if (getUser !== null) {
+//     arr = JSON.parse(getUser);
+//     console.log(arr);
+// }
+function cal() {
+    ul.innerHTML = localStorage.getItem("list");
+    console.log(ul);
+}
+cal()
 
 // delBtn
 function delFunc(e) {
@@ -48,7 +73,6 @@ function updBtn(e) {
 
 function ad1(e) {
     e.parentNode.parentNode.firstChild.textContent = inp.value;
-    // e.parentNode.firstChild.disabled = 
     inp.value = "";
     e.parentNode.lastChild.remove();
     document.querySelector(".span").disabled = false;
