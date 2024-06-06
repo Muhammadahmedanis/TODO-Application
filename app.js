@@ -2,7 +2,6 @@ var ul = document.getElementById("ul");
 var inp = document.getElementById("inp");
 
 var arr = [];
-var li;
 
 function add() {
     if(inp.value.trim().length == 0)
@@ -11,7 +10,7 @@ function add() {
         inp.value = "";
     }
     else{
-    li = document.createElement("li");
+    var li = document.createElement("li");
     li.setAttribute("class", "list");
     liText = document.createTextNode(inp.value);
     li.appendChild(liText);
@@ -21,13 +20,13 @@ function add() {
     var updBtn = document.createElement("i");
     updBtn.setAttribute("class", "fa-solid fa-pencil");
     li.appendChild(updBtn);
-    updBtn.setAttribute("onclick", "updBtn(this)");
+    // updBtn.setAttribute("onclick", "updBtn(this)");
     
     
     var delBtn = document.createElement("i");
     delBtn.setAttribute("class", "fa-regular fa-trash-can");
     li.appendChild(delBtn);
-    delBtn.setAttribute("onclick", "delFunc(this)");
+    // delBtn.setAttribute("onclick", "delFunc(this)");
     
     var di = document.createElement("span");
     di.setAttribute("class", "fi");
@@ -37,7 +36,7 @@ function add() {
 
 
     var obj = {
-        lists: li.innerHTML, 
+        lists: li.innerText, 
     }
     arr.push(obj);
     localStorage.setItem("list",JSON.stringify(arr));
@@ -45,38 +44,66 @@ function add() {
     
     }
 }
-// var getUser = localStorage.getItem("list");
-// if (getUser !== null) {
-//     arr = JSON.parse(getUser);
-//     console.log(arr);
-// }
+
 function cal() {
-    ul.innerHTML = localStorage.getItem("list");
-    console.log(ul);
+    var aa = localStorage.getItem("list");
+    var bb = JSON.parse(aa);
+    console.log(bb);
+    bb.map(function (data, i) {
+        ul.innerHTML += `<div>${data.lists}  <i class="fa-solid fa-pencil"> </i>  
+        <i onclick='delFunc(this)' class= "fa-regular fa-trash-can"> </i>     </div>`
+        console.log(data, i);
+
+    })
 }
 cal()
 
 // delBtn
 function delFunc(e) {
-    e.parentNode.parentNode.remove();
+    e.parentNode.remove();
 }
 
-function updBtn(e) {
-    inp.value = e.parentNode.parentNode.textContent;
-    var ed = document.createElement("i");
-    ed.setAttribute("class", "fa-solid fa-spinner");
-    document.querySelector(".span").disabled = true;
-    e.parentNode.firstChild.disaply = "none";
-    e.parentNode.appendChild(ed);
-    ed.setAttribute("onclick", "ad1(this)")
-}
 
-function ad1(e) {
-    e.parentNode.parentNode.firstChild.textContent = inp.value;
-    inp.value = "";
-    e.parentNode.lastChild.remove();
-    document.querySelector(".span").disabled = false;
-}
+
+
+// function updBtn(e) {
+//     inp.value = e.parentNode.parentNode.textContent;
+//     var ed = document.createElement("i");
+//     ed.setAttribute("class", "fa-solid fa-spinner");
+//     document.querySelector(".span").disabled = true;
+//     e.parentNode.firstChild.disaply = "none";
+//     e.parentNode.appendChild(ed);
+//     ed.setAttribute("onclick", "ad1(this)")
+// }
+
+// function ad1(e) {
+//     e.parentNode.parentNode.firstChild.textContent = inp.value;
+//     inp.value = "";
+//     e.parentNode.lastChild.remove();
+//     document.querySelector(".span").disabled = false;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
