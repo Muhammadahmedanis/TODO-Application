@@ -24,6 +24,7 @@ ol{
     font-weight: 600;
 }
 .fa-plus{
+    /* float: right; */
     font-size: 25px;
     cursor: pointer;
 }
@@ -49,6 +50,8 @@ ol{
     padding: 15px 10px;
     border-radius: 3px;
     height: auto;
+    font-size: large;
+    font-weight: 600;
 }
 
 
@@ -57,8 +60,11 @@ ol{
     font-size: 18px;
     cursor: pointer;
 }
-.fa-pencil
+.fa-pencil, .fa-trash-can
 {
+    float: right;
+}
+.fa-trash-can{
     margin-right: 13px;
 }
 .fa-spinner
@@ -73,6 +79,6 @@ ol{
         width: 300px;
     }  
     .list{
-        width: 295px;   
+        width: auto;   
     }    
 }
